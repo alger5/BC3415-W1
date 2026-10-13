@@ -35,7 +35,7 @@ def result():
     r = result = modelPKL.predict([[q]])
     return(render_template("result.html",r=r[0][0]))
 
-@app.route("/result", methods=["POST"])
+@app.route("/chatResult", methods=["POST"])
 def chatResult():
     q = request.form.get("q")
     r = r = model.chat.completions.create(model = 'openai/gpt-oss-120b',messages = [
